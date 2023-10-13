@@ -68,7 +68,7 @@ if st.session_state.origin and st.session_state.destination:
             waypoints_text += waypoint.split(",")[0] + ", "
         st.write(f"Via {waypoints_text}")
 
-    if st.button("Generate GPX"):
+    if st.button("Generate"):
         st.session_state.gpx_route.generate_directions(
             origin=st.session_state.origin,
             destination=st.session_state.destination,
@@ -101,10 +101,8 @@ if st.session_state.map_coordinates:
     st.subheader(
         "Distance: " + str(round(st.session_state.gpx_route.distance / 1000, 2)) + "km"
     )
-    st.subheader(
-        "Estimated duration: "
-        + str(timedelta(seconds=st.session_state.gpx_route.duration))
-    )
+    estimated_duration = timedelta(seconds=st.session_state.gpx_route.duration)
+    st.subheader("Estimated duration: " + str(estimated_duration))
 
     st.download_button(
         label="Donwload GPX file",
