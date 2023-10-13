@@ -106,3 +106,12 @@ if st.session_state.map_coordinates:
         data=st.session_state.gpx_route.gpx.to_xml(),
         file_name=f"Route from {st.session_state.origin} to {st.session_state.destination}.gpx",
     )
+
+
+st.markdown(
+    """<div style="width:100%;text-align:center;">
+                 <a href="www.linkedin.com/in/mikołaj-wojciuk-72956a20b" style="float:center">
+                 <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" width="22px"></img></a>
+                 </div>""",
+    unsafe_allow_html=True,
+)

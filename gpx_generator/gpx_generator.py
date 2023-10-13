@@ -70,8 +70,3 @@ class GPXRoute:
                 else:
                     coordinates.append(direction["end_location"])
         return coordinates
-
-
-# TODO
-# Zapis i download tymczasowego pliku
-# Drugi plik z analizą wczytanego GPXa
