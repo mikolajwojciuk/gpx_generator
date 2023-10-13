@@ -6,6 +6,11 @@ import folium
 from streamlit_folium import st_folium
 from datetime import timedelta
 
+st.set_page_config(
+    page_title="GPX Generator",
+    page_icon="🚵🏼",
+)
+
 
 if "origin" not in st.session_state:
     st.session_state.origin = ""
