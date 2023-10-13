@@ -6,8 +6,6 @@ import folium
 from streamlit_folium import st_folium
 from datetime import timedelta
 
-GMAPS_API_KEY = "AIzaSyChdOa2JQ6Cu5lMFJAG3sNehhC2Ewt5WeY"
-
 
 if "origin" not in st.session_state:
     st.session_state.origin = ""
@@ -19,7 +17,9 @@ if "waypoints" not in st.session_state:
     st.session_state.waypoints = []
 
 if "gpx_route" not in st.session_state:
-    st.session_state.gmaps_client = googlemaps.Client(key=GMAPS_API_KEY)
+    st.session_state.gmaps_client = googlemaps.Client(
+        key=os.environ.get("GMAPS_API_KEY")
+    )
     st.session_state.gpx_route = GPXRoute(gmaps=st.session_state.gmaps_client)
 
 if "map_coordinates" not in st.session_state:
